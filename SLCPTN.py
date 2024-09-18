@@ -136,7 +136,7 @@ class basicblock(nn.Module):
 class SLCPTN(nn.Module):
     def __init__(self, num_classes=3,act_layer=nn.GELU):
         super(SLCPTN, self).__init__()
-        self.dimen_adjust_linear = nn.Linear(1798, 2048)
+        self.dimen_adjust_linear = nn.Linear(input_dim, 2048)
         self.dimen_adjust_conv1 = Conv(1, 64, 15, 2)
         self.classfication = nn.Linear(192, num_classes)
         self.conv_embend = ConvEmbedEnd()
