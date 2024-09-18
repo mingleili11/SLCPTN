@@ -169,10 +169,9 @@ class SLCPTN(nn.Module):
         #FEATURE EXTRACTION
         x = self.conv_embend(x)
         x = self.patch_emb(x)
-        #SPTN
+        #SLCPTN
         atten = self.attention_basic(x)
         x = atten + self.mlp(x)
-        #x = x + self.mlp(atten)#good
        # CLASSIFICATION
         x = self.norm(x)
         x = self.avgpool(x.transpose(1, 2))
